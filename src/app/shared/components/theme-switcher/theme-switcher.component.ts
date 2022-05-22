@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ThemeSwitcherService } from '../../../core/services/ theme-switcher.service';
+import { ETheme, ThemeSwitcherService } from '../../../core/services/ theme-switcher.service';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -18,7 +18,7 @@ export class ThemeSwitcherComponent implements OnInit {
   ngOnInit() {}
 
   toggle(e): void {
-    const theme = e.detail.checked ? 'dark' : 'light';
+    const theme = e.detail.checked ? ETheme.dark : ETheme.light;
     this.themeSwitcherService.setTheme(theme);
   }
 
