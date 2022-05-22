@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img class="image" src="./assets/workout-history.jpg" alt="workout-history">
+    </ion-card-header>
+    <ion-button
+      expand="full"
+      fill="outline"
+      (click)="navigate('workout-history/workout-list')">
+      Show history
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <img class="image" src="./assets/workout.jpg" alt="workout">
+    </ion-card-header>
+    <ion-button
+      expand="full"
+      fill="outline"
+      (click)="navigate('workout/workout-exercises')">
+      Start workout
+    </ion-button>
+  </ion-card>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="primary" (click)="navigate('account/profile')">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

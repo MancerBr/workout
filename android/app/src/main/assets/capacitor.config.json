@@ -1,0 +1,6 @@
+{
+	"appId": "io.workout.app",
+	"appName": "workout",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
