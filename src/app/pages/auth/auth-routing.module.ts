@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { InitialPageComponent } from './initial-page/initial-page.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,10 @@ import { RegistrationComponent } from './registration/registration.component';
         component: AuthComponent,
         children: [
           {
+            path: '',
+            component: InitialPageComponent,
+          },
+          {
             path: 'login',
             component: LoginComponent,
           },
@@ -21,7 +26,7 @@ import { RegistrationComponent } from './registration/registration.component';
             component: RegistrationComponent,
           },
           {
-            path: '', redirectTo: 'login', pathMatch: 'full'
+            path: '', redirectTo: '', pathMatch: 'full'
           },
         ],
       },

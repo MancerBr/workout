@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="auth-logo-wrapper">
+    <app-logo></app-logo>
+  </div>
+  <div class="center">
+    <section class="form-content">
+      <div class="button-wrapper">
+        <ion-button (click)="navigate('auth/registration')"
+                    class="form-button form-button-wrapper">
+          Зарегистрироватся
+        </ion-button>
+        <ion-button
+          (click)="navigate('auth/login')"
+          class="form-button form-button-wrapper">
+          Войти
+        </ion-button>
+      </div>
+    </section>
+  </div>
+</ion-content>

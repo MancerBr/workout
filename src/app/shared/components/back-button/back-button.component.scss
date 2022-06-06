@@ -1,0 +1,10 @@
+:host {
+  margin: 0.5rem 0 0 0.5rem;
+}
+
+.back-button {
+  display: inline;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: var(--ion-safe-area-top) var(--ion-safe-area-right) var(--ion-safe-area-bottom) var(--ion-safe-area-left);
+}

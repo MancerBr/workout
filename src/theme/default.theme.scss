@@ -1,0 +1,27 @@
+:root {
+  --theme-color-step-50: #BDBDBD;
+  --theme-color-step-100: #9F9F9F;
+  --theme-color-step-200: #7E7E7E;
+  --theme-color-step-300: #635973;
+  --theme-color-step-400: #4F3E6A;
+  --theme-color-step-500: #3C2663;
+  --theme-color-step-600: #36225F;
+  --theme-color-step-700: #2C1A55;
+  --theme-color-step-800: #24144E;
+  --theme-color-step-900: #140741;
+  --theme-color-step-a100: #816DA2;
+  --theme-color-step-a200: #5436A4;
+  --theme-color-step-a400: #3F13A9;
+  --theme-color-step-a700: #350395;
+
+  --background-color: var(--theme-color-step-500);
+
+  --button-background-color: var(--theme-color-step-a200);
+
+  --form-background-color: var(--theme-color-step-700);
+  --form-title-color: #F5F5F5;
+  --form-input-background-color: #F5F5F5;
+  --form-button-background-color: var(--theme-color-step-a200);
+
+  --logo-text-color: var(--theme-color-step-a100);
+}
