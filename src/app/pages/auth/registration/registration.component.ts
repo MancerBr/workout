@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { take } from 'rxjs/operators';
+
+import { AuthService } from '../shared/services/auth.service';
+import { CompareConfirmPasswordValidator } from '../../../core/validators/compare-confirm-password.validator';
 
 @Component({
   selector: 'app-registration',
@@ -7,8 +13,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  public form: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    confirmPassword: new FormControl(''),
+  }, {
+    validators: [CompareConfirmPasswordValidator.compare],
+  });
 
-  ngOnInit() {}
+  constructor(private readonly authService: AuthService) {
+  }
 
+  ngOnInit() {
+  }
+
+  register(): void {
+    this.authService.register(
+      this.form.value.email,
+      this.form.value.password,
+    ).pipe(
+      take(1),
+    ).subscribe(() => {});
+  }
 }

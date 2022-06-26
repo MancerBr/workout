@@ -1,0 +1,10 @@
+{
+  "/apiUrl": {
+    "target": "https://workout-app-gymboss.herokuapp.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/apiUrl": ""
+    },
+    "changeOrigin": true
+  }
+}

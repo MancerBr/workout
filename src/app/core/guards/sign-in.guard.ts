@@ -9,17 +9,17 @@ import { Auth } from '../../shared/utils/auth.util';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class SignInGuard implements CanActivate {
   constructor(private navController: NavController) {
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (Auth.isAuth()) {
+    if (!Auth.isAuth()) {
       return true;
     }
-    this.navController.navigateRoot('auth');
+    this.navController.navigateRoot('');
     return false;
   }
 }

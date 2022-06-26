@@ -8,7 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { RegistrationComponent } from './registration/registration.component';
 import { SharedModule } from '../../shared/shared.module';
 import { InitialPageComponent } from './initial-page/initial-page.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,11 +18,12 @@ import { InitialPageComponent } from './initial-page/initial-page.component';
     RegistrationComponent,
     InitialPageComponent,
   ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    IonicModule,
-    SharedModule,
-  ]
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        IonicModule,
+        SharedModule,
+        ReactiveFormsModule,
+    ],
 })
 export class AuthModule { }
