@@ -1,0 +1,11 @@
+{
+  "AUTH": {
+    "LOGIN": "Вхід",
+    "EMAIL": "Пошта",
+    "PASSWORD": "Пароль",
+    "SIGN_IN": "Увійти",
+    "SIGN_UP": "Зареєструватись",
+    "REGISTRATION": "Реєстрація",
+    "REPEAT_PASSWORD": "Повторити пароль"
+  }
+}

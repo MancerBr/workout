@@ -1,0 +1,11 @@
+{
+  "AUTH": {
+    "LOGIN": "Login",
+    "EMAIL": "email",
+    "PASSWORD": "Password",
+    "SIGN_IN": "sign in",
+    "SIGN_UP": "sign up",
+    "REGISTRATION": "registration",
+    "REPEAT_PASSWORD": "repeat password"
+  }
+}

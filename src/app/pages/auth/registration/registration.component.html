@@ -6,24 +6,26 @@
   <div class="center">
     <section class="form-content">
       <div class="title-wrapper">
-        <h2 class="form-title form-title-wrapper">ВХОД</h2>
+        <h2 class="form-title form-title-wrapper">
+          {{'AUTH.REGISTRATION' | translate}}
+        </h2>
       </div>
       <div class="input-wrapper" [formGroup]="form">
         <ion-input
           class="form-input mb-2_25 form-input-wrapper"
-          placeholder="Почта"
+          placeholder="{{'AUTH.EMAIL' | translate}}"
           formControlName="email">
         </ion-input>
         <ion-input
           type="password"
           class="form-input mb-2_25 form-input-wrapper"
-          placeholder="Пароль"
+          placeholder="{{'AUTH.PASSWORD' | translate}}"
           formControlName="password">
         </ion-input>
         <ion-input
           type="password"
           class="form-input mb-2_25"
-          placeholder="Повтор пароля"
+          placeholder="{{'AUTH.REPEAT_PASSWORD' | translate}}"
           formControlName="confirmPassword">
         </ion-input>
       </div>
@@ -31,7 +33,7 @@
         <ion-button
           class="form-button form-button-wrapper"
           [disabled]="!form.valid"
-          (click)="register()">Войти</ion-button>
+          (click)="register()">{{'AUTH.SIGN_UP' | translate}}</ion-button>
       </div>
     </section>
   </div>
