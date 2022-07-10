@@ -25,7 +25,7 @@ const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, '.
       loader: {
         provide: TranslateLoader,
         useFactory: httpLoaderFactory,
-        deps: [HttpClient]
+        deps: [HttpClient],
       }
     }),
     IonicModule.forRoot({
