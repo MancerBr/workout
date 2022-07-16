@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.component';
 import { AuthLayoutComponent } from './core/layouts/auth-layout/auth-layout.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { SignInGuard } from './core/guards/sign-in.guard';
+import { DefaultLayoutComponent } from './core/layouts/default-layout/default-layout.component';
+import { TabsLayoutComponent } from './core/layouts/tabs-layout/tabs-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainLayoutComponent,
+    component: TabsLayoutComponent,
     canActivate: [AuthGuard],
     children: [
       {

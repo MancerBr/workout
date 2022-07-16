@@ -9,17 +9,10 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./workout-exercises.component.scss'],
 })
 export class WorkoutExercisesComponent implements OnInit {
-
-  exercises = exercises;
-
   constructor(
     private navController: NavController,
   ) { }
 
   ngOnInit() {}
-
-  navigate(id: number): void {
-    this.navController.navigateForward(`workout/workout-exercises/${id}`);
-  }
 
 }

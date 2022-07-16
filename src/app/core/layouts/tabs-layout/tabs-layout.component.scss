@@ -1,0 +1,18 @@
+ion-tab-bar {
+  --background: var(--ion-tab-bar-background-color);
+  app-icon {
+    color: var(--ion-tab-button-icon-color);
+  }
+}
+
+.dumbbell {
+  app-icon {
+    transform: rotate(135deg);
+  }
+}
+
+.is-active {
+  app-icon {
+    color: var(--ion-active-tab-button-icon-color);
+  }
+}

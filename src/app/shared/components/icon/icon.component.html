@@ -1,0 +1,7 @@
+<ng-container [ngSwitch]="type">
+  <span *ngSwitchCase="iconType.icoMoon" [class]="name"></span>
+  <ion-icon *ngSwitchCase="iconType.ionIcon" [name]="name"></ion-icon>
+  <ng-container *ngSwitchDefault>
+    <ion-icon [name]="name"></ion-icon>
+  </ng-container>
+</ng-container>

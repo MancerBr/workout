@@ -1,0 +1,14 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button
+      *ngFor="let tab of tabs"
+      [tab]="tab.route"
+      [ngClass]="{'is-active': isActive(tab.route)}"
+      [class]="tab?.class">
+      <app-icon
+        [name]="tab.icon.name"
+        [type]="tab.icon.type">
+      </app-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

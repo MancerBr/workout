@@ -6,6 +6,7 @@ import { WorkoutHistoryComponent } from './workout-history.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { WorkoutListComponent } from './workout-list/workout-list.component';
 import { IonicModule } from '@ionic/angular';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -19,6 +20,7 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     WorkoutHistoryRoutingModule,
     IonicModule,
+    SharedModule,
   ]
 })
 export class WorkoutHistoryModule { }

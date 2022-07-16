@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { IonicModule } from '@ionic/angular';
       },
     ]),
     IonicModule,
+    SharedModule,
   ]
 })
 export class HomeModule { }

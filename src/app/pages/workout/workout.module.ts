@@ -7,6 +7,7 @@ import { WorkoutExercisesComponent } from './workout-exercises/workout-exercises
 import { ExerciseComponent } from './exercise/exercise.component';
 import { WorkoutRoutingModule } from './workout-routing.module';
 import { WorkoutComponent } from './workout.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -15,11 +16,13 @@ import { WorkoutComponent } from './workout.component';
     WorkoutExercisesComponent,
     ExerciseComponent,
   ],
-    imports: [
-        CommonModule,
-        WorkoutRoutingModule,
-        IonicModule,
-        ReactiveFormsModule,
-    ]
+  imports: [
+    CommonModule,
+    WorkoutRoutingModule,
+    IonicModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ]
 })
-export class WorkoutModule { }
+export class WorkoutModule {
+}
