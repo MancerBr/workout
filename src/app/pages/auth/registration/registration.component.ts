@@ -5,6 +5,7 @@ import { take } from 'rxjs/operators';
 
 import { AuthService } from '../shared/services/auth.service';
 import { CompareConfirmPasswordValidator } from '../../../core/validators/compare-confirm-password.validator';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registration',
@@ -21,7 +22,10 @@ export class RegistrationComponent implements OnInit {
     validators: [CompareConfirmPasswordValidator.compare],
   });
 
-  constructor(private readonly authService: AuthService) {
+  constructor(
+    private readonly authService: AuthService,
+    private readonly navController: NavController,
+  ) {
   }
 
   ngOnInit() {
@@ -33,6 +37,8 @@ export class RegistrationComponent implements OnInit {
       this.form.value.password,
     ).pipe(
       take(1),
-    ).subscribe(() => {});
+    ).subscribe(() => {
+      this.navController.navigateRoot('auth/login');
+    });
   }
 }

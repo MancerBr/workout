@@ -18,13 +18,12 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly authService: AuthService,
-    private navController: NavController,
+    private readonly navController: NavController,
   ) { }
 
   ngOnInit() {}
 
   login(): void {
-    console.log(this.form);
     this.authService.login(
       this.form.value.email,
       this.form.value.password,
