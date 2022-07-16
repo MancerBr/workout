@@ -1,0 +1,34 @@
+.item {
+  color: white;
+  display: grid;
+  grid-template-columns: 4rem 1fr 4rem;
+}
+
+.item-main-content,
+.item-icon-content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.item-main-content,
+.left-col {
+  background: var(--app-item-component-content-background);
+}
+
+.left-col {
+  border-radius: 50% 0 0 50%;
+}
+.item-icon-content {
+  background: var(--app-item-component-icon-background);
+  border-radius: 0 50% 50% 0;
+}
+
+.text {
+  width: calc(200px - 4rem);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

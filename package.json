@@ -7,6 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "dev:android": "ionic capacitor run android -l",
     "build:android:debug": "ionic cap build android --no-open && cd android && gradlew assembleDebug",
     "test": "ng test",
     "lint": "ng lint",

@@ -33,5 +33,20 @@ export const exercises = [
     id: 7,
     text: 'Жим ногами',
     category: 'Ноги',
+  },
+  {
+    id: 5,
+    text: 'Поднятия гантель',
+    category: 'Биципс',
+  },
+  {
+    id: 6,
+    text: 'Жим блока, канат',
+    category: 'Триципс',
+  },
+  {
+    id: 7,
+    text: 'Жим ногами',
+    category: 'Ноги',
   }
 ];

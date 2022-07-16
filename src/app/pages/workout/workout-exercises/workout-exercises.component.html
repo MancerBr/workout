@@ -1,4 +1,11 @@
 <ion-content [fullscreen]="true">
-  <app-background>
+  <app-background [styles]="{'align-items': 'center'}">
+    <app-item
+      *ngFor="let exercise of exercises"
+      [text]="exercise.text"
+      [icon]="arrowIcon"
+      (clickOnElement)="navigateToExercise()"
+    >
+    </app-item>
   </app-background>
 </ion-content>

@@ -7,6 +7,7 @@ import { LogoModule } from './components/logo/logo.module';
 import { BackButtonModule } from './components/back-button/back-button.module';
 import { IconModule } from './components/icon/icon.module';
 import { BackgroundModule } from './components/background/background.module';
+import { ItemModule } from './components/item/item.module';
 
 const MODULES = [
   ThemeSwitcherModule,
@@ -15,6 +16,7 @@ const MODULES = [
   TranslateModule,
   IconModule,
   BackgroundModule,
+  ItemModule,
 ];
 
 @NgModule({

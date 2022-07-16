@@ -16,7 +16,5 @@ export class IconComponent implements OnInit {
 
   public readonly iconType = EIconType;
 
-  ngOnInit(): void {
-    console.log(this.name, this.type)
-  }
+  ngOnInit(): void {}
 }

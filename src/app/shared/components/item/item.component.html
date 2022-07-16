@@ -1,0 +1,9 @@
+<div class="item" (click)="clickOnElement.emit($event)">
+  <div class="left-col"></div>
+  <div class="middle-col item-main-content">
+    <span class="text">{{text}}</span>
+  </div>
+  <div class="right-col item-icon-content">
+    <app-icon [name]="icon.name" [type]="icon.type"></app-icon>
+  </div>
+</div>
