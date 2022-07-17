@@ -4,7 +4,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthLayoutComponent } from './core/layouts/auth-layout/auth-layout.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { SignInGuard } from './core/guards/sign-in.guard';
-import { DefaultLayoutComponent } from './core/layouts/default-layout/default-layout.component';
 import { TabsLayoutComponent } from './core/layouts/tabs-layout/tabs-layout.component';
 
 const routes: Routes = [
@@ -15,12 +14,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'workout',
         pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
       },
       {
         path: 'workout',
