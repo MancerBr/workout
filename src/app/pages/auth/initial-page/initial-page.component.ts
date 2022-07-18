@@ -9,7 +9,9 @@ import { SplashScreen } from '@capacitor/splash-screen';
 })
 export class InitialPageComponent implements AfterViewInit {
 
-  constructor(private navController: NavController) { }
+  constructor(
+    private navController: NavController,
+  ) { }
 
   ngAfterViewInit(): void {
     SplashScreen.hide();
