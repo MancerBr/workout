@@ -21,7 +21,7 @@ export class AuthService {
 
   public login(email: string, password: string): Observable<unknown> {
     return this.http.post(`${this.baseUrl}/${API.login}`, {
-      email,
+      email: email?.trim()?.toLocaleLowerCase(),
       password,
     }).pipe(
       pluck('token'),
@@ -37,7 +37,7 @@ export class AuthService {
 
   public register(email: string, password: string): Observable<unknown> {
     return this.http.post(`${this.baseUrl}/${API.register}`, {
-      email,
+      email: email?.trim()?.toLocaleLowerCase(),
       password,
       deviceId: this.device.uuid || uuidv4(),
     });

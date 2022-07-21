@@ -12,17 +12,20 @@
       </div>
       <div class="input-wrapper" [formGroup]="form">
         <ion-input
+          [ngClass]="{'error': isInvalid('email')}"
           class="form-input mb-2_25 form-input-wrapper"
           placeholder="{{'AUTH.EMAIL' | translate}}"
           formControlName="email">
         </ion-input>
         <ion-input
+          [ngClass]="{'error': isInvalid('password')}"
           type="password"
           class="form-input mb-2_25 form-input-wrapper"
           placeholder="{{'AUTH.PASSWORD' | translate}}"
           formControlName="password">
         </ion-input>
         <ion-input
+          [ngClass]="{'error': isInvalid('confirmPassword')}"
           type="password"
           class="form-input mb-2_25"
           placeholder="{{'AUTH.REPEAT_PASSWORD' | translate}}"
@@ -34,6 +37,12 @@
           class="form-button form-button-wrapper"
           [disabled]="!form.valid"
           (click)="register()">{{'AUTH.SIGN_UP' | translate}}</ion-button>
+      </div>
+      <div class="form-errors-container" *ngIf="isFormErrors">
+
+        <div class="error-button">
+          <span>{{'AUTH.ERRORS.INFO' | translate}}</span>&nbsp;<ion-badge>{{countFormErrors}}</ion-badge>
+        </div>
       </div>
     </section>
   </div>

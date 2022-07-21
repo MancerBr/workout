@@ -6,6 +6,18 @@
     "SIGN_IN": "sign in",
     "SIGN_UP": "sign up",
     "REGISTRATION": "registration",
-    "REPEAT_PASSWORD": "repeat password"
+    "REPEAT_PASSWORD": "repeat password",
+    "ERRORS": {
+      "INFO": "See errors",
+      "EMAIL": {
+        "INVALID": "incorrect email",
+        "REQUIRED": "email is required"
+      },
+      "PASSWORD": {
+        "MIN_LIMIT": "password should be {{value}} or more characters",
+        "REQUIRED": "password is required",
+        "NOT_MATCHED": "password and confirm password fields do not matched"
+      }
+    }
   }
 }
