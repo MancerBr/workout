@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 
 import { take } from 'rxjs/operators';
 
 import { AuthService } from '../shared/services/auth.service';
 import { CompareConfirmPasswordValidator } from '../../../core/validators/compare-confirm-password.validator';
 import { AuthFormErrorService, IAuthFormError } from '../shared/services/auth-form-error.service';
+import { WarningModalComponent } from '../shared/components/warning-modal/warning-modal.component';
 
 @Component({
   selector: 'app-registration',
@@ -23,12 +24,12 @@ export class RegistrationComponent implements IAuthFormError {
   }, {
     validators: [CompareConfirmPasswordValidator.compare],
   });
-  public formErrors = new Map<string, Array<string>>();
 
   constructor(
     private readonly authService: AuthService,
     private readonly navController: NavController,
     private readonly authFormErrorService: AuthFormErrorService,
+    private readonly modalCtrl: ModalController,
   ) {
   }
 
@@ -53,5 +54,16 @@ export class RegistrationComponent implements IAuthFormError {
     ).subscribe(() => {
       this.navController.navigateRoot('auth/login');
     });
+  }
+
+  public async showWarnings(): Promise<void> {
+    const modal = await this.modalCtrl.create({
+      component: WarningModalComponent,
+      cssClass: 'auth-form-warning',
+      componentProps: {
+        formErrors: this.authFormErrorService.getErrorMessages(this.form),
+      },
+    });
+    await modal.present();
   }
 }

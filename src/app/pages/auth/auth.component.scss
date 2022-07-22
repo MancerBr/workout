@@ -76,3 +76,30 @@
   justify-content: center;
   align-items: center;
 }
+
+.form-errors-container {
+  display: flex;
+  justify-content: center;
+}
+
+.error-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    color: var(--app-error-color);
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    cursor: pointer;
+  }
+
+  ion-badge {
+    --background: var(--app-error-color);
+  }
+}
+
+.error {
+  background: var(--app-error-color);
+  opacity: 0.5;
+}

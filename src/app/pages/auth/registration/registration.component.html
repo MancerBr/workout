@@ -39,8 +39,7 @@
           (click)="register()">{{'AUTH.SIGN_UP' | translate}}</ion-button>
       </div>
       <div class="form-errors-container" *ngIf="isFormErrors">
-
-        <div class="error-button">
+        <div class="error-button" (click)="showWarnings()">
           <span>{{'AUTH.ERRORS.INFO' | translate}}</span>&nbsp;<ion-badge>{{countFormErrors}}</ion-badge>
         </div>
       </div>

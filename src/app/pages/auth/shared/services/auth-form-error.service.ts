@@ -53,19 +53,28 @@ export class AuthFormErrorService {
 
     if (this.isInvalid(form, 'email')) {
       getFormErrors(form).get('email').forEach((error: string) => {
-        formErrors.get('email').push(errorMessage.email[error]);
+        const errorMsg = errorMessage.email[error];
+        if (errorMsg) {
+          formErrors.get('email').push(errorMsg);
+        }
       });
     }
 
     if (this.isInvalid(form, 'password')) {
       getFormErrors(form).get('password').forEach((error: string) => {
-        formErrors.get('password').push(errorMessage.password[error]);
+        const errorMsg = errorMessage.password[error];
+        if (errorMsg) {
+          formErrors.get('password').push(errorMsg);
+        }
       });
     }
 
     if (this.isConfirmPasswordInvalid(form)) {
       getFormErrors(form).get('mainErrors').forEach((error: string) => {
-        formErrors.get('password').push(errorMessage.password[error]);
+        const errorMsg = errorMessage.password[error];
+        if (errorMsg) {
+          formErrors.get('password').push(errorMsg);
+        }
       });
     }
 
