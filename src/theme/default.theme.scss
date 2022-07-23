@@ -13,6 +13,8 @@
   --theme-color-step-a200: #5436A4;
   --theme-color-step-a400: #3F13A9;
   --theme-color-step-a700: #350395;
+  --theme-warning: red;
+  --theme-white-color: white;
 
   --background-color: var(--theme-color-step-500);
 
@@ -27,11 +29,17 @@
 
   --ion-tab-bar-background-color: var(--theme-color-step-500);
   --ion-tab-button-icon-color: #23538F;
-  --ion-active-tab-button-icon-color: white;
+  --ion-active-tab-button-icon-color: var(--theme-white-color);
 
   --app-item-component-content-background: var(--theme-color-step-a700);
   --app-item-component-icon-background: var(--theme-color-step-a400);
   --app-background-component-background: var(--theme-color-step-900);
 
-  --app-error-color: red;
+  --app-error-color: var(--theme-warning);
+
+  --app-modal-header-button-color: var(--theme-color-step-50);
+  --app-modal-header-title-color: var(--theme-color-step-50);
+  --app-mpdal-content-title-color: var(--theme-color-step-50);
+  --app-modal-content-text-color: var(--theme-color-step-50);
+  --app-modal-content-icon-color: var(--theme-color-step-50);
 }

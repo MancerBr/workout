@@ -1,3 +1,28 @@
 .text {
   white-space: break-spaces;
+  color: var(--app-modal-content-text-color);
 }
+
+app-icon {
+  color: var(--app-modal-content-icon-color);
+}
+
+ion-toolbar {
+  --background: var(--background-color);
+}
+
+ion-title {
+  font-weight: bold;
+  color: var(--app-modal-header-title-color);
+}
+
+ion-button {
+  color: var(--app-modal-header-button-color);
+}
+
+
+ion-list-header {
+  font-weight: bold;
+  color: var(--app-mpdal-content-title-color);
+}
+

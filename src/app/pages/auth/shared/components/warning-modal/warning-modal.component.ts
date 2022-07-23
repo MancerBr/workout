@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { TFormErrorMessage } from '../../types';
 
 @Component({
   selector: 'app-warning-modal',
@@ -8,7 +9,8 @@ import { ModalController } from '@ionic/angular';
 })
 export class WarningModalComponent {
 
-  public formErrors: Map<string, Array<string>>;
+  public formErrors: TFormErrorMessage;
+  public countErrors: number;
 
   constructor(private readonly modalCtrl: ModalController) {}
 

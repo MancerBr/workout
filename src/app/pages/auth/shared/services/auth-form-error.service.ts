@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 import { getFormErrors } from '../../../../shared/utils/get-form-errors.util';
 import { errorMessage } from '../constants/error-message.constants';
+import { TFormError, TFormErrorMessage } from '../types';
 
 export interface IAuthFormError {
   get countFormErrors(): number;
@@ -11,7 +12,7 @@ export interface IAuthFormError {
 }
 
 export interface IAuthFormErrorMessage {
-  get getErrorMessages(): Map<string, Array<string>>;
+  get getErrorMessages(): TFormErrorMessage;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -26,7 +27,7 @@ export class AuthFormErrorService {
     return count;
   }
 
-  public getErrorMessages(form: FormGroup): Map<string, Array<string>> {
+  public getErrorMessages(form: FormGroup): TFormErrorMessage {
     return this.checkFormErrors(form);
   }
 
@@ -45,8 +46,8 @@ export class AuthFormErrorService {
     return Boolean(form.invalid && form.touched && form.errors);
   }
 
-  private checkFormErrors(form: FormGroup): Map<string, Array<string>> {
-    const formErrors = new Map<string, Array<string>>([
+  private checkFormErrors(form: FormGroup): TFormErrorMessage {
+    const formErrors = new Map<string, Array<TFormError>>([
       ['email', []],
       ['password', []],
     ]);

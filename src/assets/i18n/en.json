@@ -9,6 +9,14 @@
     "REPEAT_PASSWORD": "repeat password",
     "ERRORS": {
       "INFO": "See errors",
+      "EMAIL_WARNING": {
+        "SINGULAR": "Email warning",
+        "PLURAL": "Email warnings"
+      },
+      "PASSWORD_WARNING": {
+        "SINGULAR": "Password warning",
+        "PLURAL": "Password warnings"
+      },
       "EMAIL": {
         "INVALID": "incorrect email",
         "REQUIRED": "email is required"
@@ -19,5 +27,10 @@
         "NOT_MATCHED": "password and confirm password fields do not matched"
       }
     }
+  },
+  "CLOSE": "Close",
+  "WARNING": {
+    "SINGULAR": "Warning",
+    "PLURAL": "Warnings"
   }
 }

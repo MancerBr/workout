@@ -8,6 +8,7 @@ import { AuthService } from '../shared/services/auth.service';
 import { CompareConfirmPasswordValidator } from '../../../core/validators/compare-confirm-password.validator';
 import { AuthFormErrorService, IAuthFormError } from '../shared/services/auth-form-error.service';
 import { WarningModalComponent } from '../shared/components/warning-modal/warning-modal.component';
+import { passwordMinLength } from '../shared/constants/password-min-length.constant';
 
 @Component({
   selector: 'app-registration',
@@ -19,7 +20,7 @@ export class RegistrationComponent implements IAuthFormError {
 
   public form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(passwordMinLength)]),
     confirmPassword: new FormControl(''),
   }, {
     validators: [CompareConfirmPasswordValidator.compare],
@@ -62,6 +63,7 @@ export class RegistrationComponent implements IAuthFormError {
       cssClass: 'auth-form-warning',
       componentProps: {
         formErrors: this.authFormErrorService.getErrorMessages(this.form),
+        countErrors: this.countFormErrors,
       },
     });
     await modal.present();

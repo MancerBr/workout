@@ -8,8 +8,9 @@ import { BackButtonModule } from './components/back-button/back-button.module';
 import { IconModule } from './components/icon/icon.module';
 import { BackgroundModule } from './components/background/background.module';
 import { ItemModule } from './components/item/item.module';
+import { PipeModule } from './pipe/pipe.module';
 
-const MODULES = [
+const modules = [
   ThemeSwitcherModule,
   LogoModule,
   BackButtonModule,
@@ -17,14 +18,15 @@ const MODULES = [
   IconModule,
   BackgroundModule,
   ItemModule,
+  PipeModule,
 ];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    ...MODULES,
+    ...modules,
   ],
-  exports: [...MODULES],
+  exports: [...modules],
 })
 export class SharedModule { }

@@ -1,11 +1,24 @@
+import { passwordMinLength } from './password-min-length.constant';
+
 export const errorMessage = {
   email: {
-    required: 'AUTH.ERRORS.EMAIL.REQUIRED',
-    email: 'AUTH.ERRORS.EMAIL.INVALID',
+    required: {
+      key: 'AUTH.ERRORS.EMAIL.REQUIRED',
+    },
+    email: {
+      key: 'AUTH.ERRORS.EMAIL.INVALID',
+    },
   },
   password: {
-    required: 'AUTH.ERRORS.PASSWORD.REQUIRED',
-    minLength: 'AUTH.ERRORS.PASSWORD.MIN_LIMIT',
-    passwordCompareError: 'AUTH.ERRORS.PASSWORD.NOT_MATCHED',
-  }
+    required: {
+      key: 'AUTH.ERRORS.PASSWORD.REQUIRED',
+    },
+    minlength: {
+      key: 'AUTH.ERRORS.PASSWORD.MIN_LIMIT',
+      value: passwordMinLength,
+    },
+    passwordCompareError: {
+      key: 'AUTH.ERRORS.PASSWORD.NOT_MATCHED',
+    },
+  },
 };
