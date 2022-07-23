@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { take } from 'rxjs/operators';
@@ -10,6 +10,7 @@ import { WarningModalComponent } from '../shared/components/warning-modal/warnin
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss', '../auth.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements IAuthFormError {
 
@@ -17,13 +18,16 @@ export class LoginComponent implements IAuthFormError {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
   });
+  public isLoading = false;
 
   constructor(
-    private readonly authService: AuthService,
-    private readonly navController: NavController,
-    private readonly authFormErrorService: AuthFormErrorService,
-    private readonly modalCtrl: ModalController,
-  ) { }
+    private authService: AuthService,
+    private navController: NavController,
+    private authFormErrorService: AuthFormErrorService,
+    private modalCtrl: ModalController,
+    private cdRef: ChangeDetectorRef,
+  ) {
+  }
 
   public get countFormErrors(): number {
     return this.authFormErrorService.countFormErrors(this.form);
@@ -38,14 +42,21 @@ export class LoginComponent implements IAuthFormError {
   }
 
   public login(): void {
+    this.isLoading = true;
     this.authService.login(
       this.form.value.email,
       this.form.value.password,
     ).pipe(
       take(1),
-    ).subscribe(() => {
-      this.navController.navigateRoot('');
-    });
+    ).subscribe(
+      () => {
+        this.navController.navigateRoot('');
+      },
+      () => {
+        this.isLoading = false;
+        this.cdRef.detectChanges();
+      },
+    );
   }
 
   public async showWarnings(): Promise<void> {

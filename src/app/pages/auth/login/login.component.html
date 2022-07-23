@@ -25,10 +25,15 @@
       </div>
       <div class="button-wrapper">
         <ion-button
-          [disabled]="!form.valid"
+          [disabled]="!form.valid || isLoading"
           class="form-button form-button-wrapper"
           (click)="login()">
-          {{'AUTH.SIGN_IN' | translate}}
+          <span>{{'AUTH.SIGN_IN' | translate}}</span>
+          <ion-spinner
+            *ngIf="isLoading"
+            class="spinner"
+            name="crescent">
+          </ion-spinner>
         </ion-button>
       </div>
       <div class="form-errors-container" *ngIf="isFormErrors">

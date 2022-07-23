@@ -35,8 +35,15 @@
       <div class="button-wrapper">
         <ion-button
           class="form-button form-button-wrapper"
-          [disabled]="!form.valid"
-          (click)="register()">{{'AUTH.SIGN_UP' | translate}}</ion-button>
+          [disabled]="!form.valid || isLoading"
+          (click)="register()">
+          <span>{{'AUTH.SIGN_UP' | translate}}</span>
+          <ion-spinner
+            *ngIf="isLoading"
+            class="spinner"
+            name="crescent">
+          </ion-spinner>
+        </ion-button>
       </div>
       <div class="form-errors-container" *ngIf="isFormErrors">
         <div class="error-button" (click)="showWarnings()">

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController, NavController } from '@ionic/angular';
 
@@ -25,12 +25,14 @@ export class RegistrationComponent implements IAuthFormError {
   }, {
     validators: [CompareConfirmPasswordValidator.compare],
   });
+  public isLoading = false;
 
   constructor(
-    private readonly authService: AuthService,
-    private readonly navController: NavController,
-    private readonly authFormErrorService: AuthFormErrorService,
-    private readonly modalCtrl: ModalController,
+    private authService: AuthService,
+    private navController: NavController,
+    private authFormErrorService: AuthFormErrorService,
+    private modalCtrl: ModalController,
+    private cdRef: ChangeDetectorRef,
   ) {
   }
 
@@ -47,14 +49,21 @@ export class RegistrationComponent implements IAuthFormError {
   }
 
   public register(): void {
+    this.isLoading = true;
     this.authService.register(
       this.form.value.email,
       this.form.value.password,
     ).pipe(
       take(1),
-    ).subscribe(() => {
-      this.navController.navigateRoot('auth/login');
-    });
+    ).subscribe(
+      () => {
+        this.navController.navigateRoot('auth/login');
+      },
+      () => {
+        this.isLoading = false;
+        this.cdRef.detectChanges();
+      },
+    );
   }
 
   public async showWarnings(): Promise<void> {
