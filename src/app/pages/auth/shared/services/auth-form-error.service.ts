@@ -37,13 +37,13 @@ export class AuthFormErrorService {
 
   public isInvalid(form: FormGroup, formControlName: 'email' | 'password' | 'confirmPassword'): boolean {
     if (formControlName === 'confirmPassword') {
-      return this.isConfirmPasswordInvalid(form);
+      return this.isConfirmPasswordInvalid(form, formControlName);
     }
     return form.controls[formControlName].invalid && form.controls[formControlName].touched;
   }
 
-  private isConfirmPasswordInvalid(form: FormGroup): boolean {
-    return Boolean(form.invalid && form.touched && form.errors);
+  private isConfirmPasswordInvalid(form: FormGroup, formControlName: 'confirmPassword'): boolean {
+    return Boolean(form.invalid && form.controls[formControlName].touched && form.errors);
   }
 
   private checkFormErrors(form: FormGroup): TFormErrorMessage {
@@ -70,7 +70,7 @@ export class AuthFormErrorService {
       });
     }
 
-    if (this.isConfirmPasswordInvalid(form)) {
+    if (this.isInvalid(form, 'confirmPassword')) {
       getFormErrors(form).get('mainErrors').forEach((error: string) => {
         const errorMsg = errorMessage.password[error];
         if (errorMsg) {
