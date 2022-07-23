@@ -26,6 +26,8 @@ export class RegistrationComponent implements IAuthFormError {
     validators: [CompareConfirmPasswordValidator.compare],
   });
   public isLoading = false;
+  public isSeePassword = false;
+  public isSeeConfirmPassword = false;
 
   constructor(
     private authService: AuthService,
@@ -76,5 +78,13 @@ export class RegistrationComponent implements IAuthFormError {
       },
     });
     await modal.present();
+  }
+
+  public togglePassword(type: 'password' | 'confirmPassword'): void {
+    if (type === 'password') {
+      this.isSeePassword = !this.isSeePassword;
+    } else {
+      this.isSeeConfirmPassword = !this.isSeeConfirmPassword;
+    }
   }
 }

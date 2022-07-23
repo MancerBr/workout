@@ -19,6 +19,7 @@ export class LoginComponent implements IAuthFormError {
     password: new FormControl('', [Validators.required]),
   });
   public isLoading = false;
+  public isSeePassword = false;
 
   constructor(
     private authService: AuthService,
@@ -69,6 +70,10 @@ export class LoginComponent implements IAuthFormError {
       },
     });
     await modal.present();
+  }
+
+  togglePassword(): void {
+    this.isSeePassword = !this.isSeePassword;
   }
 
 }

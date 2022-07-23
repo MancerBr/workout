@@ -17,10 +17,14 @@
         </ion-input>
         <ion-input
           [ngClass]="{'error': isInvalid('password')}"
-          type="password"
+          clear-on-edit="false"
+          [type]="isSeePassword ? 'text' : 'password'"
           class="form-input mb-2_25"
           placeholder="{{'AUTH.PASSWORD' | translate}}"
           formControlName="password">
+          <ion-button class="eye" fill="clear" (click)="togglePassword()">
+            <app-icon class="eye-icon" [name]="isSeePassword ? 'eye-outline' : 'eye-off-outline'"></app-icon>
+          </ion-button>
         </ion-input>
       </div>
       <div class="button-wrapper">

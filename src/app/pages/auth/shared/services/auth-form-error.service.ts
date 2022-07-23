@@ -43,6 +43,9 @@ export class AuthFormErrorService {
   }
 
   private isConfirmPasswordInvalid(form: FormGroup, formControlName: 'confirmPassword'): boolean {
+    if (!form.controls[formControlName]) {
+      return false;
+    }
     return Boolean(form.invalid && form.controls[formControlName].touched && form.errors);
   }
 
