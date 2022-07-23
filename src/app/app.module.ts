@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Device } from '@awesome-cordova-plugins/device/ngx';
+import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -61,7 +62,7 @@ const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, '.
     CoreModule,
     HttpClientModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Device],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Device, StatusBar],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

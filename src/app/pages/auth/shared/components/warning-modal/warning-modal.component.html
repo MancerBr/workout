@@ -8,14 +8,18 @@
 </ion-header>
 <ion-content class="ion-padding" *ngIf="formErrors">
   <ion-list *ngIf="formErrors.get('email').length">
-    <ion-list-header>{{'AUTH.ERRORS.EMAIL_WARNING' | pluralForm: formErrors.get('email').length | translate}}:</ion-list-header>
+    <ion-list-header>
+      {{'AUTH.ERRORS.EMAIL_WARNING' | pluralForm: formErrors.get('email').length | translate}}:
+    </ion-list-header>
     <ion-item *ngFor="let emailError of formErrors.get('email')">
       <app-icon slot="start" name="alert-circle-outline"></app-icon>
       <ion-label class="text">{{emailError.key | translate}}</ion-label>
     </ion-item>
   </ion-list>
   <ion-list *ngIf="formErrors.get('password').length">
-    <ion-list-header>{{'AUTH.ERRORS.PASSWORD_WARNING' | pluralForm: formErrors.get('password').length | translate}}:</ion-list-header>
+    <ion-list-header>
+      {{'AUTH.ERRORS.PASSWORD_WARNING' | pluralForm: formErrors.get('password').length | translate}}:
+    </ion-list-header>
     <ion-item *ngFor="let passwordError of formErrors.get('password')">
       <app-icon slot="start" name="alert-circle-outline"></app-icon>
       <ion-label class="text">

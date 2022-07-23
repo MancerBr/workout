@@ -8,7 +8,10 @@
     "REGISTRATION": "registration",
     "REPEAT_PASSWORD": "repeat password",
     "ERRORS": {
-      "INFO": "See errors",
+      "INFO": {
+        "SINGULAR": "See error",
+        "PLURAL": "See errors"
+      },
       "EMAIL_WARNING": {
         "SINGULAR": "Email warning",
         "PLURAL": "Email warnings"

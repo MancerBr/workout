@@ -54,6 +54,7 @@ export class LoginComponent implements IAuthFormError {
       cssClass: 'auth-form-warning',
       componentProps: {
         formErrors: this.authFormErrorService.getErrorMessages(this.form),
+        countErrors: this.countFormErrors,
       },
     });
     await modal.present();
