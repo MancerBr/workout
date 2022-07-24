@@ -24,9 +24,11 @@
           class="form-input mb-2_25 form-input-wrapper"
           placeholder="{{'AUTH.PASSWORD' | translate}}"
           formControlName="password">
-          <ion-button class="eye" fill="clear" (click)="togglePassword('password')">
-            <app-icon class="eye-icon" [name]="isSeePassword ? 'eye-outline' : 'eye-off-outline'"></app-icon>
-          </ion-button>
+          <app-icon
+            (click)="togglePassword('password')"
+            class="eye-icon"
+            [name]="isSeePassword ? 'eye-outline' : 'eye-off-outline'">
+          </app-icon>
         </ion-input>
         <ion-input
           [ngClass]="{'error': isInvalid('confirmPassword')}"
@@ -35,9 +37,11 @@
           class="form-input mb-2_25"
           placeholder="{{'AUTH.REPEAT_PASSWORD' | translate}}"
           formControlName="confirmPassword">
-          <ion-button class="eye" fill="clear" (click)="togglePassword('confirmPassword')">
-            <app-icon class="eye-icon" [name]="isSeeConfirmPassword ? 'eye-outline' : 'eye-off-outline'"></app-icon>
-          </ion-button>
+          <app-icon
+            (click)="togglePassword('confirmPassword')"
+            class="eye-icon"
+            [name]="isSeeConfirmPassword ? 'eye-outline' : 'eye-off-outline'">
+          </app-icon>
         </ion-input>
       </div>
       <div class="button-wrapper">

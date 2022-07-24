@@ -40,3 +40,11 @@ html,
   --height: 100%;
   --width: 100%;
 }
+
+ion-toast {
+  --background: var(--app-toast-background);
+  --button-color: var(--app-toast-color);
+  --color: var(--app-toast-color);
+  font-weight: bold;
+  text-align: center;
+}

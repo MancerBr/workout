@@ -22,9 +22,11 @@
           class="form-input mb-2_25"
           placeholder="{{'AUTH.PASSWORD' | translate}}"
           formControlName="password">
-          <ion-button class="eye" fill="clear" (click)="togglePassword()">
-            <app-icon class="eye-icon" [name]="isSeePassword ? 'eye-outline' : 'eye-off-outline'"></app-icon>
-          </ion-button>
+          <app-icon
+            (click)="togglePassword()"
+            class="eye eye-icon"
+            [name]="isSeePassword ? 'eye-outline' : 'eye-off-outline'">
+          </app-icon>
         </ion-input>
       </div>
       <div class="button-wrapper">

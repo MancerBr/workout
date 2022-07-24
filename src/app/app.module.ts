@@ -7,11 +7,12 @@ import { createAnimation, IonicModule, IonicRouteStrategy } from '@ionic/angular
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { Device } from '@awesome-cordova-plugins/device/ngx';
 import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ErrorHandlingInterceptor } from './core/interceptors/error-handling.interceptor';
 
 
 const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -22,7 +23,6 @@ const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, '.
   imports: [
     BrowserModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: httpLoaderFactory,
@@ -62,7 +62,16 @@ const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, '.
     CoreModule,
     HttpClientModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Device, StatusBar],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlingInterceptor, multi: true },
+    Device,
+    StatusBar,
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private translateService: TranslateService) {
+    this.translateService.use('en');
+  }
+}
