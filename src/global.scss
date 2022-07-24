@@ -48,3 +48,40 @@ ion-toast {
   font-weight: bold;
   text-align: center;
 }
+
+
+.button {
+  position: relative;
+  --border-radius: 2rem;
+  --background: var(--form-button-background-color);
+}
+
+.custom-app-action-sheet {
+  --background: var(--app-action-sheet-background);
+  --button-color: var(--app-action-sheet-button-color);
+  --ion-background-color: var(--app-action-sheet-ion-background-color);
+
+  .action-sheet-title {
+    --color: var(--app-action-sheet-title-color);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .active {
+    --button-background: var(--app-action-sheet-active-button-background);
+  }
+
+  .cancel {
+    text-transform: uppercase;
+  }
+}
+
+
+ion-avatar {
+  background: var(--app-avatar-background);
+  color: var(--app-avatar-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}

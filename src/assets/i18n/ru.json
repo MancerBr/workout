@@ -1,11 +1,51 @@
 {
   "AUTH": {
     "LOGIN": "Вход",
+    "LOG_OUT": "Выход",
     "EMAIL": "Почта",
     "PASSWORD": "Пароль",
     "SIGN_IN": "Войти",
     "SIGN_UP": "Зарегистрироваться",
     "REGISTRATION": "Регистрация",
-    "REPEAT_PASSWORD": "Повторить пароль"
-  }
+    "REPEAT_PASSWORD": "Повторить пароль",
+    "ERRORS": {
+      "INFO": {
+        "SINGULAR": "Посмотреть ошибку",
+        "PLURAL": "Посмотреть ошибки"
+      },
+      "EMAIL_WARNING": {
+        "SINGULAR": "Электронный адрес",
+        "PLURAL": "Электронный адрес"
+      },
+      "PASSWORD_WARNING": {
+        "SINGULAR": "Пароль",
+        "PLURAL": "Пароль"
+      },
+      "EMAIL": {
+        "INVALID": "неправильный формат электронного адреса",
+        "REQUIRED": "электронный адрес не указан"
+      },
+      "PASSWORD": {
+        "MIN_LIMIT": "пароль должен содержать {{value}} символов или больше",
+        "REQUIRED": "пароль не указан",
+        "NOT_MATCHED": "поля \"пароль\" и \"подтвердить пароль\" не совпадают"
+      }
+    }
+  },
+  "CLOSE": "Закрыть",
+  "WARNING": {
+    "SINGULAR": "Предупреждение",
+    "PLURAL": "Предупреждение"
+  },
+  "HTTP_ERRORS": {
+    "INVALID_CREDENTIALS": "Электронный адрес или пароль указан неверно.",
+    "USER_ALREADY_EXISTS": "Пользователь с таким адресом: {{value}} уже существует!",
+    "SOMETHING_WENT_WRONG": "Что то пошло нетак!",
+    "SESSION_EXPIRED": "Сеанс истек, пожалуйста войдите в систему!"
+  },
+  "LANGUAGE": {
+    "SINGULAR": "язык",
+    "PLURAL": "языки"
+  },
+  "CANCEL": "отменить"
 }

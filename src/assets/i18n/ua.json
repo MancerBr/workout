@@ -1,11 +1,51 @@
 {
   "AUTH": {
     "LOGIN": "Вхід",
+    "LOG_OUT": "Вихід",
     "EMAIL": "Пошта",
     "PASSWORD": "Пароль",
     "SIGN_IN": "Увійти",
     "SIGN_UP": "Зареєструватись",
     "REGISTRATION": "Реєстрація",
-    "REPEAT_PASSWORD": "Повторити пароль"
-  }
+    "REPEAT_PASSWORD": "Повторити пароль",
+    "ERRORS": {
+      "INFO": {
+        "SINGULAR": "Подивитись помилку",
+        "PLURAL": "Подивитись помилки"
+      },
+      "EMAIL_WARNING": {
+        "SINGULAR": "Електронна адреса",
+        "PLURAL": "Електронна адреса"
+      },
+      "PASSWORD_WARNING": {
+        "SINGULAR": "Пароль",
+        "PLURAL": "Пароль"
+      },
+      "EMAIL": {
+        "INVALID": "неправильний формат електронної адреси",
+        "REQUIRED": "електронна адреса не вказана"
+      },
+      "PASSWORD": {
+        "MIN_LIMIT": "пароль має містити {{value}} символів або більше",
+        "REQUIRED": "пароль не вказано",
+        "NOT_MATCHED": "поля \"пароль\" та \"підтвердити пароль\" не збігаються"
+      }
+    }
+  },
+  "CLOSE": "Закрити",
+  "WARNING": {
+    "SINGULAR": "Попередження",
+    "PLURAL": "Попередження"
+  },
+  "HTTP_ERRORS": {
+    "INVALID_CREDENTIALS": "Електронна адреса або пароль вказано неправильно.",
+    "USER_ALREADY_EXISTS": "Користувач з такою адресою: {{value}} вже існує!",
+    "SOMETHING_WENT_WRONG": "Щось пішло не так!",
+    "SESSION_EXPIRED": "Сеанс минув, будь ласка, увійдіть до системи!"
+  },
+  "LANGUAGE": {
+    "SINGULAR": "мова",
+    "PLURAL": "мови"
+  },
+  "CANCEL": "скасувати"
 }

@@ -13,6 +13,7 @@ import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ErrorHandlingInterceptor } from './core/interceptors/error-handling.interceptor';
+import { SelectLanguageService } from './shared/components/select-language/shared/services/select-language.service';
 
 
 const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -71,7 +72,9 @@ const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, '.
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(private translateService: TranslateService) {
-    this.translateService.use('en');
+  constructor(private selectLanguageService: SelectLanguageService) {
+    this.selectLanguageService.setLanguage(
+      this.selectLanguageService.getCurrentLanguage.shortText,
+    );
   }
 }

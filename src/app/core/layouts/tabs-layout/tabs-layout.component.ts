@@ -37,13 +37,13 @@ export class TabsLayoutComponent implements OnInit, OnDestroy {
       },
       route: 'workout-history/workout-list',
     },
-    {
-      icon: {
-        name: 'icon-plus',
-        type: EIconType.icoMoon,
-      },
-      route: '',
-    },
+    // {
+    //   icon: {
+    //     name: 'icon-plus',
+    //     type: EIconType.icoMoon,
+    //   },
+    //   route: '',
+    // },
   ];
 
   private readonly destroy$: Subject<void> = new Subject<void>();
@@ -55,7 +55,7 @@ export class TabsLayoutComponent implements OnInit, OnDestroy {
       filter((event) => event instanceof NavigationEnd),
       takeUntil(this.destroy$),
     ).subscribe((event: NavigationEnd) => {
-      this.url = event.url;
+      this.url = event.urlAfterRedirects;
     });
   }
 

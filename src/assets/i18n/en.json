@@ -1,6 +1,7 @@
 {
   "AUTH": {
     "LOGIN": "Login",
+    "LOG_OUT": "log out",
     "EMAIL": "email",
     "PASSWORD": "Password",
     "SIGN_IN": "sign in",
@@ -37,9 +38,14 @@
     "PLURAL": "Warnings"
   },
   "HTTP_ERRORS": {
-    "INVALID_CREDENTIALS": "invalid password or email",
+    "INVALID_CREDENTIALS": "Invalid password or email",
     "USER_ALREADY_EXISTS": "User with email: {{value}} already exists!",
-    "SOMETHING_WENT_WRONG": "something went wrong!",
-    "SESSION_EXPIRED": "session expired please login again!"
-  }
+    "SOMETHING_WENT_WRONG": "Something went wrong!",
+    "SESSION_EXPIRED": "Session expired please login again!"
+  },
+  "LANGUAGE": {
+    "SINGULAR": "language",
+    "PLURAL": "languages"
+  },
+  "CANCEL": "cancel"
 }

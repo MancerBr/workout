@@ -1,4 +1,20 @@
 <ion-content [fullscreen]="true">
   <app-background>
+    <section class="user-info-content">
+      <ion-avatar>A</ion-avatar>
+    </section>
+
+    <section class="language-wrapper">
+      <h1 class="title">Language:</h1>
+      <app-select-language></app-select-language>
+    </section>
+
+    <section class="logout-wrapper">
+      <ion-button
+        (click)="logout()"
+        class="button">
+        {{'AUTH.LOG_OUT' | translate}}
+      </ion-button>
+    </section>
   </app-background>
 </ion-content>

@@ -1,0 +1,16 @@
+<ng-container *ngIf="!isShort; else smallButton">
+  <ion-button
+    (click)="change()"
+    expand="block">
+    {{currentLanguage?.text}}
+  </ion-button>
+</ng-container>
+
+<ng-template #smallButton>
+  <ion-fab-button
+    (click)="change()"
+    class="button"
+    size="small">
+    {{currentLanguage?.shortText?.toUpperCase()}}
+  </ion-fab-button>
+</ng-template>

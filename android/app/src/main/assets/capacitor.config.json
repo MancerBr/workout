@@ -11,12 +11,6 @@
 			"androidScaleType": "CENTER_CROP",
 			"splashFullScreen": false,
 			"splashImmersive": false
-		},
-		"server": {
-			"url": "http://localhost:8100",
-			"allowNavigation": [
-				"*"
-			]
 		}
 	}
 }

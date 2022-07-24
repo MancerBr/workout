@@ -1,0 +1,19 @@
+.user-info-content {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.language-wrapper {
+  margin-bottom: 2rem;
+}
+
+.logout-wrapper {
+  ion-button {
+    width: 100%;
+  }
+}
+
+.title {
+  color: var(--app-title-color);
+}

@@ -9,6 +9,7 @@ import { IconModule } from './components/icon/icon.module';
 import { BackgroundModule } from './components/background/background.module';
 import { ItemModule } from './components/item/item.module';
 import { PipeModule } from './pipe/pipe.module';
+import { SelectLanguageModule } from './components/select-language/select-language.module';
 
 const modules = [
   ThemeSwitcherModule,
@@ -19,6 +20,7 @@ const modules = [
   BackgroundModule,
   ItemModule,
   PipeModule,
+  SelectLanguageModule,
 ];
 
 @NgModule({
