@@ -49,7 +49,6 @@ export class SelectLanguageComponent implements OnInit, OnDestroy {
       role: language.shortText,
     }));
     const actionSheet = await this.actionSheetController.create({
-      header: await this.translateService.get('LANGUAGE.PLURAL').toPromise(),
       mode: 'ios',
       cssClass: 'custom-app-action-sheet',
       buttons: [

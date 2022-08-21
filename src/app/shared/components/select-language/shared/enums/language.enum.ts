@@ -1,5 +1,5 @@
 export enum ELanguage {
   english = 'English',
-  russian = 'Russian',
-  ukrainian = 'Ukrainian',
+  russian = 'Русский',
+  ukrainian = 'Українська',
 }
